@@ -1,0 +1,61 @@
+name:                day02-inventory-management-system
+version:             0.1.0.0
+github:              "christophebiocca/day02-inventory-management-system"
+license:             BSD3
+author:              "Christophe Biocca"
+maintainer:          "christophe.biocca@gmail.com"
+copyright:           "Christophe Biocca"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/christophebiocca/day02-inventory-management-system#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- containers >= 0.5
+- lens >= 4
+- mtl >= 2
+
+library:
+  source-dirs: src
+
+executables:
+  day02-part1:
+    main:                Main.hs
+    source-dirs:         part1
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - day02-inventory-management-system
+
+  day02-part2:
+    main:                Main.hs
+    source-dirs:         part2
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - day02-inventory-management-system
+
+tests:
+  day02-inventory-management-system-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - day02-inventory-management-system
