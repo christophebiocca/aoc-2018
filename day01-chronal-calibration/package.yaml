@@ -1,0 +1,59 @@
+name:                day01-chronal-calibration
+version:             0.1.0.0
+github:              "githubuser/day01-chronal-calibration"
+license:             BSD3
+author:              "Christophe Biocca"
+maintainer:          "christophe.biocca@gmail.com"
+copyright:           "2018 Christophe Biocca"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/christophebiocca/day01-chronal-calibration#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- containers >= 0.5
+
+library:
+  source-dirs: src
+
+executables:
+  day01-part1:
+    main:                Main.hs
+    source-dirs:         part1
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - day01-chronal-calibration
+
+  day01-part2:
+    main:                Main.hs
+    source-dirs:         part2
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - day01-chronal-calibration
+
+tests:
+  day01-chronal-calibration-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - day01-chronal-calibration
